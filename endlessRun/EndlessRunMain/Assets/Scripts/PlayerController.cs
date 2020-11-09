@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     public float forwardSpeed;
 
-    private int desiredLane = 1;//0:left 1:middle 2:right
-    public float laneDistance = 4;// the distance between two lanes
+    private int desiredLane = 1;
+    public float laneDistance = 4;
 
     public float jumpForce;
     public float Gravity = -20;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         direction.z = forwardSpeed;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         {
             direction.y += Gravity * Time.deltaTime;
         }
-        //Gather the inputs on which lane we should be
+        
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
                 desiredLane = 0;
         }
 
-        //Calculate where should we be in the future
+        
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
@@ -65,8 +65,15 @@ public class PlayerController : MonoBehaviour
             targetPosition += Vector3.right * laneDistance; 
         }
 
-        transform.position = targetPosition;
-
+       
+        if (transform.position == targetPosition)
+            return;
+        Vector3 diff = targetPosition - transform.position;
+        Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+        if (moveDir.sqrMagnitude < diff.sqrMagnitude)
+            controller.Move(moveDir);
+        else
+            controller.Move(diff);
     }
 
  private void FixedUpdate()
