@@ -296,6 +296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundTile: {fileID: 3815928617010419776, guid: cac4163e849581e47a0f768bda4eb8da,
     type: 3}
+  coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
+    type: 3}
+  ObstaclePrefab: {fileID: 440430934840404774, guid: 565fef986d3e47e448564ac3c3b0fac9,
+    type: 3}
 --- !u!4 &303475506
 Transform:
   m_ObjectHideFlags: 0

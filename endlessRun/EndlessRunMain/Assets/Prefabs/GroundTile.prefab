@@ -119,8 +119,8 @@ Transform:
   m_LocalPosition: {x: -0.04, y: -0.15, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4497166282100606029}
   - {fileID: 8861325134161829512}
+  - {fileID: 4497166282100606029}
   - {fileID: 6981156529897215305}
   - {fileID: 3961693403742853108}
   - {fileID: 8463946906402901438}
@@ -152,6 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc193cda8741d2841942bf954b6c73a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 8861325134161829512}
+  obstaclePoints:
+  - {fileID: 6981156529897215305}
+  - {fileID: 3961693403742853108}
+  - {fileID: 8463946906402901438}
   ObstaclePrefab: {fileID: 440430934840404774, guid: 565fef986d3e47e448564ac3c3b0fac9,
     type: 3}
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
@@ -184,7 +189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3533225049380629604}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8649697194885994460
 GameObject:
@@ -217,7 +222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3533225049380629604}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2551408806206160588
 MeshFilter:
