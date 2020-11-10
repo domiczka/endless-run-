@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3533225049380629604}
   - component: {fileID: 8100596668621059199}
-  - component: {fileID: 4473384678456839995}
+  - component: {fileID: 2428905466563993855}
   m_Layer: 0
   m_Name: GroundTile
   m_TagString: Untagged
@@ -140,7 +140,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 5}
---- !u!114 &4473384678456839995
+--- !u!114 &2428905466563993855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstaclePrefab: {fileID: 440430934840404774, guid: 565fef986d3e47e448564ac3c3b0fac9,
+    type: 3}
+  coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
 --- !u!1 &7756480077908637543
 GameObject:
