@@ -9,7 +9,7 @@ public class GroundTile : MonoBehaviour
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
         SpawnObstacle();
-        SpawnCoins();
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -35,15 +35,7 @@ public class GroundTile : MonoBehaviour
 
     public GameObject coinPrefab;
 
-    void SpawnCoins()
-    {
-        int coinsToSpawn = 10;
-        for (int i = 0; i < coinsToSpawn; i++)
-        {
-            GameObject temp = Instantiate(coinPrefab, transform);
-            temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
-        }
-    }
+    
     Vector3 GetRandomPointInCollider(Collider collider)
     {
         Vector3 point = new Vector3(
