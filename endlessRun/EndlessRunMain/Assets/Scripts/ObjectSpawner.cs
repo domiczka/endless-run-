@@ -22,7 +22,7 @@ public class ObjectSpawner : MonoBehaviour
 
 void SpawnCoins ()
     {
-        Instantiate(coins[(Random.Range(0, coins.Length))], new Vector3(Random.Range(-3, 3), 1, player.transform.position.z + 90), Quaternion.identity);
+        Instantiate(coins[(Random.Range(0, coins.Length))], new Vector3(Random.Range(-3, 3), 1, player.transform.position.z + 91), Quaternion.identity);
         coinSpawnTimer = Random.Range(1.0f, 2.0f);
     }
 
