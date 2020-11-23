@@ -16,9 +16,20 @@ public class GroundTile : MonoBehaviour
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
         if (!SpawnMovingObstacle())
         {
-            SpawnObstacle();
-            SpawnRollUnderObstacle();
-            SpawnSlideObstacle();
+            int spawnChance = Random.Range(1, 7);
+
+            if (spawnChance == 1 || spawnChance == 2 || spawnChance == 3)
+            {
+                SpawnObstacle();
+            }
+            if (spawnChance == 4 || spawnChance == 5)
+            {
+                SpawnRollUnderObstacle();
+            }
+            if (spawnChance == 6)
+            {
+                SpawnSlideObstacle();
+            }
         }
 
 
