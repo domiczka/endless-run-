@@ -17,6 +17,7 @@ public class Obstacle : MonoBehaviour
         {
             playerMovement.Die();
         }
+        //second collider for activate.component.constantforce?
     }
   
     void Update()

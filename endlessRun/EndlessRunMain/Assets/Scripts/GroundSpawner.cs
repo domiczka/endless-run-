@@ -4,7 +4,7 @@ public class GroundSpawner : MonoBehaviour
 {
 
    public GameObject groundTile;
-    Vector3 nextSpawnPoint;
+   Vector3 nextSpawnPoint;
 
     public void SpawnTile()
     {
