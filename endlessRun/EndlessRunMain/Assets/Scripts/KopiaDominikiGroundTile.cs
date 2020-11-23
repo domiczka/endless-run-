@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class GroundTile : MonoBehaviour
+public class KopiaDominikiGroundTile : MonoBehaviour
 {
-    
+
     GroundSpawner groundSpawner;
 
     private void Start()
@@ -10,7 +10,7 @@ public class GroundTile : MonoBehaviour
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
         SpawnObstacle();
         SpawnRollUnderObstacle();
-        
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -21,10 +21,10 @@ public class GroundTile : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
     public GameObject ObstaclePrefab;
-  
+
     void SpawnObstacle()
     {
         int obstacleSpawnIndex = Random.Range(2, 5);
@@ -32,7 +32,7 @@ public class GroundTile : MonoBehaviour
 
 
         Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
-        
+
     }
 
     public GameObject RollUnderObstaclePrefab;
@@ -48,7 +48,7 @@ public class GroundTile : MonoBehaviour
 
     public GameObject coinPrefab;
 
-    
+
     Vector3 GetRandomPointInCollider(Collider collider)
     {
         Vector3 point = new Vector3(
@@ -65,4 +65,3 @@ public class GroundTile : MonoBehaviour
         return point;
     }
 }
-
