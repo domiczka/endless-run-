@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
-
+    public GameManager gameManager;
     bool alive = true; 
 
     public float speed = 5;
@@ -42,9 +42,14 @@ public class PlayerMovement : MonoBehaviour
         Invoke("Restart", 2);
     }
 
+    public void Start()
+    {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+        Debug.Log("Test1");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameManager.GameOver();
     }
 }
