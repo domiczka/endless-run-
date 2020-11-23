@@ -9,7 +9,7 @@ public class GroundTile : MonoBehaviour
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
         SpawnObstacle();
-        SpawnRollUnderObstacle();
+       
         
     }
 
@@ -33,16 +33,6 @@ public class GroundTile : MonoBehaviour
 
         Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
         
-    }
-
-    public GameObject RollUnderObstaclePrefab;
-
-    void SpawnRollUnderObstacle()
-    {
-        int rollUnderObstacleSpawnIndex = Random.Range(5, 8);
-        Transform spawnPoint = transform.GetChild(rollUnderObstacleSpawnIndex).transform;
-
-        Instantiate(RollUnderObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
     }
 
 
