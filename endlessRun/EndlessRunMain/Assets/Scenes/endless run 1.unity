@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 158332457}
+  playerMovement: {fileID: 1993479024}
   GameOverMenu: {fileID: 337403883}
 --- !u!4 &981139387
 Transform:
@@ -1631,3 +1632,4 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 1993479019}
   horizontalMultiplier: 1.7
+  speedIncreasePerPoint: 0.1

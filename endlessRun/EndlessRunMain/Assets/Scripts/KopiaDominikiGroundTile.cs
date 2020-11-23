@@ -39,7 +39,7 @@ public class KopiaDominikiGroundTile : MonoBehaviour
 
     void SpawnRollUnderObstacle()
     {
-        int rollUnderObstacleSpawnIndex = Random.Range(5, 8);
+        int rollUnderObstacleSpawnIndex = Random.Range(7, 10);
         Transform spawnPoint = transform.GetChild(rollUnderObstacleSpawnIndex).transform;
 
         Instantiate(RollUnderObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
