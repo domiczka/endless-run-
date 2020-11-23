@@ -201,11 +201,11 @@ GameObject:
   - component: {fileID: 6513311255195637889}
   m_Layer: 0
   m_Name: RollUnderObstacle
-  m_TagString: Untagged
+  m_TagString: temp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &552718560387176371
 Transform:
   m_ObjectHideFlags: 0
