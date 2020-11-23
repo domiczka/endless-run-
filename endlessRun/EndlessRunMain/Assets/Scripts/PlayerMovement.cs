@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     public float horizontalMultiplier = 2;                //dzięki temu gracz porusza się horyzontalnie (prawo, lewo) 2 raza szybciej niz porusza się do przodu
 
+    public float speedIncreasePerPoint = 0.1f;
+
 
    private void FixedUpdate ()
     {

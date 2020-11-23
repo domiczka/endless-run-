@@ -7,6 +7,8 @@ public class GroundTile : MonoBehaviour
     public GameObject coinPrefab;
     public GameObject ObstaclePrefab;
     public GameObject movingObstacle;
+    public GameObject RollUnderObstaclePrefab;
+    public GameObject SlideObstaclePrefab;
 
 
     private void Start()
@@ -15,6 +17,8 @@ public class GroundTile : MonoBehaviour
         if (!SpawnMovingObstacle())
         {
             SpawnObstacle();
+            SpawnRollUnderObstacle();
+            SpawnSlideObstacle();
         }
 
 
@@ -60,6 +64,22 @@ public class GroundTile : MonoBehaviour
             return true;
         } 
         return false;
+    }
+
+    void SpawnRollUnderObstacle()
+    {
+        int rollUnderObstacleSpawnIndex = Random.Range(7, 10);
+        Transform spawnPoint = transform.GetChild(rollUnderObstacleSpawnIndex).transform;
+
+        Instantiate(RollUnderObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+    }
+
+    void SpawnSlideObstacle()
+    {
+        int slideObstacleSpawnIndex = Random.Range(10, 13);
+        Transform spawnPoint = transform.GetChild(slideObstacleSpawnIndex).transform;
+
+        Instantiate(SlideObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
     }
 
 
