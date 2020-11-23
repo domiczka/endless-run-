@@ -32,7 +32,13 @@ public class GroundTile : MonoBehaviour
             Destroy(gameObject, 2);
         }
     }
-
+    //void OnTriggerEnter(Collider collision)
+    //{
+        //if (collision.gameObject.name == "Player")
+        //{
+            //movingObstacle.GetComponent<ConstantForce>().enabled = true;
+        //}
+    //}
     private void Update()
     {
         
@@ -48,7 +54,6 @@ public class GroundTile : MonoBehaviour
     }
     bool SpawnMovingObstacle()
     {
-       //makes the game lag on launch for whatever reason
         int spawnChance = Random.Range(1, 6);
 
         int rightSpawnIndex = 5;
@@ -57,7 +62,6 @@ public class GroundTile : MonoBehaviour
         Transform rightSpawnPoint = transform.GetChild(rightSpawnIndex).transform;
         Transform leftSpawnPoint = transform.GetChild(leftSpawnIndex).transform;
 
-        //makes the game lag on launch for whatever reason + some tiles despawn after the obstacle moves
         if (spawnChance == 1)
         {
             Instantiate(movingObstacle, rightSpawnPoint.position, Quaternion.identity, transform);
