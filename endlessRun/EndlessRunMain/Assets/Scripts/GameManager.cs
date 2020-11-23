@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int score;
     public static GameManager inst;
     public Text scoreText;
+    public GameObject GameOverMenu;
 
     public void IncrementScore()
     {
@@ -20,15 +21,20 @@ public class GameManager : MonoBehaviour
         inst = this;
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
+    }
+    public void GameOver()
+    {
+        GameOverMenu.SetActive(true);
+        Debug.Log("Test");
     }
 }
