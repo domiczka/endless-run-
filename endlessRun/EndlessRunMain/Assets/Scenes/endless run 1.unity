@@ -969,10 +969,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e2288c4f894244b9120e034b9267f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSpawnTimer: 1
   player: {fileID: 1993479018}
   coins:
   - {fileID: 717207291569209961, guid: 5a8fe5ed01292bc43b9b7d0c40078d35, type: 3}
   - {fileID: 3614954718522488398, guid: 822c57bd270a6cc43a7cbb7c4f0b9842, type: 3}
+  boosterSpawnTimer: 1
+  booster:
+  - {fileID: 8543507360897177308, guid: 7b1d064e430144448bd39750d93e95e1, type: 3}
+  - {fileID: 1611389464249948516, guid: 5c2f4f93fb6c0024ca7c83f23689a0b9, type: 3}
+  - {fileID: 8543507360897177308, guid: 7b1d064e430144448bd39750d93e95e1, type: 3}
 --- !u!4 &709105560
 Transform:
   m_ObjectHideFlags: 0

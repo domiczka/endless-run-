@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedIncreasePerPoint = 0.1f;
 
+    private float boostTimer;
+    private bool boosting;
 
    private void FixedUpdate ()
     {
@@ -23,9 +25,37 @@ public class PlayerMovement : MonoBehaviour
         Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;   //kliknięcie klawisza d powoduje przesuwanie gracza w prawo, a klawisza a - w lewo
         
         rb.MovePosition(rb.position + forwardMove + horizontalMove);
+
+        if (boosting == true)
+        {
+            boostTimer += Time.deltaTime;
+            if (boostTimer >= 5)
+            {
+                speed = 5;
+                boostTimer = 0;
+                boosting = false;
+            }
+        }
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "SpeedBoost")
+        {
+            boosting = true;
+            //is slower after the boost
+            speed += 5;
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "Invincibility")
+        {
+            //disable collider but keep the movement?
+        }
+        if (other.tag == "CoinBoost")
+        {
+            GameManager.inst.IncrementDoubleScore();
+        }
+    }
 
     private void Update()
     {
@@ -47,6 +77,9 @@ public class PlayerMovement : MonoBehaviour
     public void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+
+        boostTimer = 0;
+        boosting = false;
     }
     void Restart()
     {

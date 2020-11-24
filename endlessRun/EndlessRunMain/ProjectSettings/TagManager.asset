@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Coin
   - temp
+  - SpeedBoost
+  - Invincibility
+  - CoinBoost
   layers:
   - Default
   - TransparentFX
