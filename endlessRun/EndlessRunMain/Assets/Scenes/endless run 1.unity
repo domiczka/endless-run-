@@ -1764,6 +1764,7 @@ MonoBehaviour:
   rb: {fileID: 1993479019}
   horizontalMultiplier: 1.7
   speedIncreasePerPoint: 0.1
+  reducedHeight: 1
 --- !u!114 &1993479025
 MonoBehaviour:
   m_ObjectHideFlags: 0

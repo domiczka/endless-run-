@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private float boostTimer;
     private bool boosting;
 
+    CapsuleCollider playerCollidor;
+    float normalHeight;
+    public float reducedHeight;
+
    private void FixedUpdate ()
     {
         if (!alive) return;
@@ -65,7 +69,19 @@ public class PlayerMovement : MonoBehaviour
             Die();
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+            Crouch();
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+            StopCrouch();
+
+    }
+    void Crouch()
+    {
+        playerCollidor.height = reducedHeight;
+    }
+    void StopCrouch()
+    {
+        playerCollidor.height = normalHeight;
     }
 
     public void Die ()
@@ -80,6 +96,9 @@ public class PlayerMovement : MonoBehaviour
 
         boostTimer = 0;
         boosting = false;
+
+        playerCollidor = GetComponent<CapsuleCollider>();
+        normalHeight = playerCollidor.height;
     }
     void Restart()
     {
