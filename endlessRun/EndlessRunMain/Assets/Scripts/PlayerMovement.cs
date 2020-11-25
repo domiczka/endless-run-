@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     float normalHeight;
     public float reducedHeight;
 
+    //TODO:
+    //More rules for random obstacle spawn
+    //Moving obstacles decide what way they go
+    
    private void FixedUpdate ()
     {
         if (!alive) return;
@@ -120,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Restart()
     {
-        Debug.Log("Test1");
+        //Debug.Log("Test1");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.GameOver();
     }

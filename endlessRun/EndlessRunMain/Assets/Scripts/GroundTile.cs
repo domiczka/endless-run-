@@ -10,7 +10,6 @@ public class GroundTile : MonoBehaviour
     public GameObject RollUnderObstaclePrefab;
     public GameObject SlideObstaclePrefab;
 
-
     private void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
@@ -31,8 +30,6 @@ public class GroundTile : MonoBehaviour
                 SpawnSlideObstacle();
             }
         }
-
-
     }
 
     private void OnTriggerExit(Collider collision)
@@ -43,30 +40,66 @@ public class GroundTile : MonoBehaviour
             Destroy(gameObject, 2);
         }
     }
-    //void OnTriggerEnter(Collider collision)
-    //{
-        //if (collision.gameObject.name == "Player")
-        //{
-            //movingObstacle.GetComponent<ConstantForce>().enabled = true;
-        //}
-    //}
-    private void Update()
-    {
-        
-    }
 
     void SpawnObstacle()
     {
-        int obstacleSpawnIndex = Random.Range(2, 5);
-        Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+        //old spawn
+        //int obstacleSpawnIndex = Random.Range(2, 5);
+        //Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+        //Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
 
+        //trying new spawn logic below:
+        Transform obstacleLeft = transform.GetChild(2).transform;
+        Transform obstacleMiddle = transform.GetChild(3).transform;
+        Transform obstacleRight = transform.GetChild(4).transform;
 
-        Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+        int obstacleSpawnFormation = Random.Range(1, 8);
+        if (obstacleSpawnFormation == 1)
+        {
+            Instantiate(ObstaclePrefab, obstacleLeft.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleMiddle.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleRight.position, Quaternion.identity, transform);
+        }
+        if (obstacleSpawnFormation == 2)
+        {
+            Instantiate(ObstaclePrefab, obstacleLeft.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleMiddle.position, Quaternion.identity, transform);
+        }
+        if (obstacleSpawnFormation == 3)
+        {
+            Instantiate(ObstaclePrefab, obstacleLeft.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleRight.position, Quaternion.identity, transform);
+        }
+        if (obstacleSpawnFormation == 4)
+        {
+            Instantiate(ObstaclePrefab, obstacleMiddle.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleRight.position, Quaternion.identity, transform);
+        }
+        if (obstacleSpawnFormation == 5)
+        {
+            Instantiate(RollUnderObstaclePrefab, obstacleLeft.position, Quaternion.identity, transform);
+            Instantiate(RollUnderObstaclePrefab, obstacleMiddle.position, Quaternion.identity, transform);
+            Instantiate(RollUnderObstaclePrefab, obstacleRight.position, Quaternion.identity, transform);
+        }
+        if (obstacleSpawnFormation == 6)
+        {
+            Instantiate(RollUnderObstaclePrefab, obstacleLeft.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleMiddle.position, Quaternion.identity, transform);
+            Instantiate(RollUnderObstaclePrefab, obstacleRight.position, Quaternion.identity, transform);
+        }
+        if (obstacleSpawnFormation == 7)
+        {
+            Instantiate(ObstaclePrefab, obstacleLeft.position, Quaternion.identity, transform);
+            Instantiate(RollUnderObstaclePrefab, obstacleMiddle.position, Quaternion.identity, transform);
+            Instantiate(ObstaclePrefab, obstacleRight.position, Quaternion.identity, transform);
+        }
+
     }
     bool SpawnMovingObstacle()
     {
         int spawnChance = Random.Range(1, 6);
 
+        //int spawnSide = Random.Range(5, 7);
         int rightSpawnIndex = 5;
         int leftSpawnIndex = 6;
 

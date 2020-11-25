@@ -64,6 +64,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GameOverMenu.SetActive(true);
-        Debug.Log("Test");
+        //Debug.Log("Test");
     }
 }

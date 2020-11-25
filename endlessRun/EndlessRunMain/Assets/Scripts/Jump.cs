@@ -5,14 +5,14 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
 
-    private float jumpSpeed = 6;
+    public float jumpSpeed = 6;
+    public float fallSpeed = 1.5f;
     private Rigidbody rigidBody;
     private bool onGround = true;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-
     }
 
     void Update()
@@ -21,6 +21,10 @@ public class Jump : MonoBehaviour
         {
             rigidBody.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
             onGround = false;
+            if (onGround == false)
+            {
+                Invoke("MoveDown", 0.5f);
+            }
         }
     }
     void OnCollisionEnter(Collision collision)
@@ -28,4 +32,8 @@ public class Jump : MonoBehaviour
         onGround = true;
     }
 
+    public void MoveDown()
+    {
+        rigidBody.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
+    }
 }
