@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 511519411}
   - component: {fileID: 511519414}
   - component: {fileID: 511519415}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EaterOfWorlds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ MonoBehaviour:
   booster:
   - {fileID: 8543507360897177308, guid: 7b1d064e430144448bd39750d93e95e1, type: 3}
   - {fileID: 1611389464249948516, guid: 5c2f4f93fb6c0024ca7c83f23689a0b9, type: 3}
-  - {fileID: 8543507360897177308, guid: 7b1d064e430144448bd39750d93e95e1, type: 3}
+  - {fileID: 1973348640931962096, guid: ad93c989ef0a55843946a296cc0591cb, type: 3}
 --- !u!4 &709105560
 Transform:
   m_ObjectHideFlags: 0
@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 1993479019}
   - component: {fileID: 1993479024}
   - component: {fileID: 1993479025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,6 +1764,7 @@ MonoBehaviour:
   rb: {fileID: 1993479019}
   horizontalMultiplier: 1.7
   speedIncreasePerPoint: 0.1
+  myObject: {fileID: 1993479021}
   reducedHeight: 1
 --- !u!114 &1993479025
 MonoBehaviour:

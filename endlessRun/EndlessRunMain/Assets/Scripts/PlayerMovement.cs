@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public GameManager gameManager;
     bool alive = true; 
 
-    public float speed = 5;
+    public float speed = 10;
     public Rigidbody rb;
 
     float horizontalInput;
@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float boostTimer;
     private bool boosting;
+    private float boostMoveTimer;
+    private bool boostingMove;
+    [SerializeField] private Renderer myObject;
 
     CapsuleCollider playerCollidor;
     float normalHeight;
@@ -35,11 +38,24 @@ public class PlayerMovement : MonoBehaviour
             boostTimer += Time.deltaTime;
             if (boostTimer >= 5)
             {
-                speed = 5;
+                //speed = 10;
+                speed -= 5;
                 boostTimer = 0;
                 boosting = false;
             }
         }
+        if (boostingMove == true)
+        {
+            boostMoveTimer += Time.deltaTime;
+            if (boostMoveTimer >= 5)
+            {
+                this.gameObject.layer = 10;
+                myObject.material.color = Color.blue;
+                boostMoveTimer = 0;
+                boostingMove = false;
+            }
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,13 +63,15 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "SpeedBoost")
         {
             boosting = true;
-            //is slower after the boost
             speed += 5;
             Destroy(other.gameObject);
         }
         if (other.tag == "Invincibility")
         {
-            //disable collider but keep the movement?
+            this.gameObject.layer = 9;
+            myObject.material.color = Color.green;
+            boostingMove = true;
+            Destroy(other.gameObject);
         }
         if (other.tag == "CoinBoost")
         {
