@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 969960879745329284}
   - component: {fileID: 2468271204882634008}
   m_Layer: 8
-  m_Name: MovingObstacle
+  m_Name: MovingObstacleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ ConstantForce:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5677173002409065590}
   m_Enabled: 0
-  m_Force: {x: -5, y: 0, z: 0}
+  m_Force: {x: 5, y: 0, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
@@ -256,3 +256,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b108596e4235d45a11d2cf182eab9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundTile: {fileID: 0}

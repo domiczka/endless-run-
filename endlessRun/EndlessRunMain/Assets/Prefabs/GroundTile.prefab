@@ -375,7 +375,9 @@ MonoBehaviour:
     type: 3}
   ObstaclePrefab: {fileID: 440430934840404774, guid: 565fef986d3e47e448564ac3c3b0fac9,
     type: 3}
-  movingObstacle: {fileID: 5677173002409065590, guid: dc78be78b207b37459c97f6317707c72,
+  movingObstacleRight: {fileID: 5677173002409065590, guid: dc78be78b207b37459c97f6317707c72,
+    type: 3}
+  movingObstacleLeft: {fileID: 5677173002409065590, guid: 92159e6ae50ac644281ce2c164c703a4,
     type: 3}
   RollUnderObstaclePrefab: {fileID: 7131866324582735878, guid: e13c1daf6b08e4f4e8fcb294c469b17d,
     type: 3}
@@ -435,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8030193446055578938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 1.5, z: 10}
+  m_LocalPosition: {x: -3.3, y: 1.5, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3533225049380629604}

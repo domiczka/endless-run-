@@ -6,7 +6,8 @@ public class GroundTile : MonoBehaviour
     GroundSpawner groundSpawner;
     public GameObject coinPrefab;
     public GameObject ObstaclePrefab;
-    public GameObject movingObstacle;
+    public GameObject movingObstacleRight;
+    public GameObject movingObstacleLeft;
     public GameObject RollUnderObstaclePrefab;
     public GameObject SlideObstaclePrefab;
 
@@ -97,7 +98,7 @@ public class GroundTile : MonoBehaviour
     }
     bool SpawnMovingObstacle()
     {
-        int spawnChance = Random.Range(1, 6);
+        int spawnChance = Random.Range(1, 8);
 
         //int spawnSide = Random.Range(5, 7);
         int rightSpawnIndex = 5;
@@ -108,9 +109,14 @@ public class GroundTile : MonoBehaviour
 
         if (spawnChance == 1)
         {
-            Instantiate(movingObstacle, rightSpawnPoint.position, Quaternion.identity, transform);
+            Instantiate(movingObstacleRight, rightSpawnPoint.position, Quaternion.identity, transform);
             return true;
-        } 
+        }
+        if (spawnChance == 2)
+        {
+            Instantiate(movingObstacleLeft, leftSpawnPoint.position, Quaternion.identity, transform);
+            return true;
+        }
         return false;
     }
 
