@@ -375,11 +375,11 @@ MonoBehaviour:
     type: 3}
   ObstaclePrefab: {fileID: 4193714742245133696, guid: 3e41c021917b9a94e81bd63847d74c90,
     type: 3}
-  movingObstacleRight: {fileID: 1428558110344247654, guid: 256c193182663e84ab44e3bd4544727c,
+  movingObstacleRight: {fileID: 1800363226416774956, guid: 256c193182663e84ab44e3bd4544727c,
     type: 3}
-  movingObstacleLeft: {fileID: 1996680206819363989, guid: 71f1384004c0e6149bead17595f7b5c2,
+  movingObstacleLeft: {fileID: 3233451675436132907, guid: 71f1384004c0e6149bead17595f7b5c2,
     type: 3}
-  RollUnderObstaclePrefab: {fileID: 847154796237409512, guid: ccc7588f834e4834eb88761f5d1c045f,
+  RollUnderObstaclePrefab: {fileID: 2094812725451096608, guid: ccc7588f834e4834eb88761f5d1c045f,
     type: 3}
   SlideObstaclePrefab: {fileID: 4428476725295512408, guid: 7d14a4dcd08d14a4d831be06021c68eb,
     type: 3}

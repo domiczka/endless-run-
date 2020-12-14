@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4428476723901826213}
   - component: {fileID: 4428476723901826211}
   - component: {fileID: 4428476723901826210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small Rusted House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4428476724224935043}
   - component: {fileID: 4428476724224935041}
   - component: {fileID: 4428476724224935040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,9 +171,9 @@ GameObject:
   - component: {fileID: 4428476725295512391}
   - component: {fileID: 4428476725295512390}
   - component: {fileID: 4428476725295512409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: smallHouse
-  m_TagString: Untagged
+  m_TagString: temp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

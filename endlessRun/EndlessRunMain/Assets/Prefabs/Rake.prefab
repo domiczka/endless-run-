@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6598298717284491654}
   - component: {fileID: 2325219484207928466}
   - component: {fileID: 8083602471287800396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 7755058514201629756}
   - component: {fileID: 5602549543376780821}
   - component: {fileID: 6805753858476585045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rake
-  m_TagString: Untagged
+  m_TagString: temp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

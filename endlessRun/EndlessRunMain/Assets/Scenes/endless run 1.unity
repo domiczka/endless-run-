@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 158332457}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 127856078}
   GameOverMenu: {fileID: 337403883}
 --- !u!4 &981139387
 Transform:
