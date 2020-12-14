@@ -373,15 +373,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
-  ObstaclePrefab: {fileID: 440430934840404774, guid: 565fef986d3e47e448564ac3c3b0fac9,
+  ObstaclePrefab: {fileID: 4882218975362940380, guid: dcf6d4237bb436b45ae4bd5de61f2099,
     type: 3}
-  movingObstacleRight: {fileID: 5677173002409065590, guid: dc78be78b207b37459c97f6317707c72,
+  movingObstacleRight: {fileID: 6052788730378095791, guid: c3b358cd160f5854cbadad639aaf0e86,
     type: 3}
-  movingObstacleLeft: {fileID: 5677173002409065590, guid: 92159e6ae50ac644281ce2c164c703a4,
+  movingObstacleLeft: {fileID: 6052788730378095791, guid: c3b358cd160f5854cbadad639aaf0e86,
     type: 3}
   RollUnderObstaclePrefab: {fileID: 847154796237409512, guid: ccc7588f834e4834eb88761f5d1c045f,
     type: 3}
-  SlideObstaclePrefab: {fileID: 207872768947119250, guid: ff18ae91bc5dfd04787648f5f7709f61,
+  SlideObstaclePrefab: {fileID: 7879454767311040322, guid: 002b0e6cac8ba83409bb1585f188b075,
     type: 3}
 --- !u!1 &7756480077908637543
 GameObject:
@@ -532,7 +532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c262c90b10ca8734f9c612ad941e1220, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
