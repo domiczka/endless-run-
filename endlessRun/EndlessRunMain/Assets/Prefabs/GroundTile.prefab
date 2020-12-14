@@ -379,7 +379,7 @@ MonoBehaviour:
     type: 3}
   movingObstacleLeft: {fileID: 5677173002409065590, guid: 92159e6ae50ac644281ce2c164c703a4,
     type: 3}
-  RollUnderObstaclePrefab: {fileID: 2079150093478429689, guid: 0777850893455fb42b875f184250f999,
+  RollUnderObstaclePrefab: {fileID: 847154796237409512, guid: ccc7588f834e4834eb88761f5d1c045f,
     type: 3}
   SlideObstaclePrefab: {fileID: 207872768947119250, guid: ff18ae91bc5dfd04787648f5f7709f61,
     type: 3}
