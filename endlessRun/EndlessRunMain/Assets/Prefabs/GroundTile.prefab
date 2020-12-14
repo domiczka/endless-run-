@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
-  ObstaclePrefab: {fileID: 5412825171877586979, guid: 3e41c021917b9a94e81bd63847d74c90,
+  ObstaclePrefab: {fileID: 4193714742245133696, guid: 3e41c021917b9a94e81bd63847d74c90,
     type: 3}
   movingObstacleRight: {fileID: 1428558110344247654, guid: 256c193182663e84ab44e3bd4544727c,
     type: 3}
