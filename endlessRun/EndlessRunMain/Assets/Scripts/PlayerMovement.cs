@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        if (transform.position.y < -5)
+        if (transform.position.y < -8)
         {
             Die();
         }
