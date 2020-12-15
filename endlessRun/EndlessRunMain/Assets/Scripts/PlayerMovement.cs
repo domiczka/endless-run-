@@ -1,10 +1,11 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 public class PlayerMovement : MonoBehaviour
 {
     public GameManager gameManager;
-    bool alive = true; 
+    bool alive = true;
+    public Animator anim;
 
     public float speed = 10;
     public Rigidbody rb;
@@ -54,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
             if (boostMoveTimer >= 5)
             {
                 this.gameObject.layer = 10;
-                myObject.material.color = Color.blue;
+                anim.Play("Fox_RunUSE");
+                //myObject.material.color = Color.blue;
                 boostMoveTimer = 0;
                 boostingMove = false;
             }
@@ -72,8 +74,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.tag == "Invincibility")
         {
+
+            anim.Play("Fox_SomersaultUSE");
+
             this.gameObject.layer = 9;
-            myObject.material.color = Color.green;
+            //myObject.material.color = Color.green;
             boostingMove = true;
             Destroy(other.gameObject);
         }
@@ -121,6 +126,8 @@ public class PlayerMovement : MonoBehaviour
 
         playerCollidor = GetComponent<CapsuleCollider>();
         normalHeight = playerCollidor.height;
+
+        anim = GetComponent<Animator>();
     }
     void Restart()
     {

@@ -405,6 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 981139386}
+  anim: {fileID: 0}
   speed: 10
   rb: {fileID: 127856076}
   horizontalMultiplier: 1.7
@@ -1689,7 +1690,7 @@ PrefabInstance:
     - target: {fileID: 7666986768240843510, guid: 9fedecbd1aa68924b816f15cb97e611a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7666986768240843510, guid: 9fedecbd1aa68924b816f15cb97e611a,
         type: 3}
