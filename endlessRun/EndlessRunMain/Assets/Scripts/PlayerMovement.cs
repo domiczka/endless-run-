@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "Invincibility")
         {
 
-            anim.Play("Fox_SomersaultUSE");
+            anim.Play("Fox_Attack_TailUSE");
 
             this.gameObject.layer = 9;
             //myObject.material.color = Color.green;
@@ -105,10 +105,12 @@ public class PlayerMovement : MonoBehaviour
     void Crouch()
     {
         playerCollidor.height = reducedHeight;
+        anim.Play("Fox_SomersaultUSE");
     }
     void StopCrouch()
     {
         playerCollidor.height = normalHeight;
+        anim.Play("Fox_RunUSE");
     }
 
     public void Die ()
