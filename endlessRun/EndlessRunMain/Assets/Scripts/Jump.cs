@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
 
-    public float jumpSpeed = 6;
+    public float jumpSpeed = 8;
     public float fallSpeed = 1.5f;
     private Rigidbody rigidBody;
     private bool onGround = true;

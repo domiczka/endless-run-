@@ -7,13 +7,22 @@ public class PlayerMovement : MonoBehaviour
     bool alive = true;
     public Animator anim;
 
-    public float speed = 10;
+    public float speed = 5;
+    public float maxSpeed = 18f;
     public Rigidbody rb;
 
     float horizontalInput;
     public float horizontalMultiplier = 2;                //dzięki temu gracz porusza się horyzontalnie (prawo, lewo) 2 raza szybciej niz porusza się do przodu
 
     public float speedIncreasePerPoint = 0.1f;
+
+    //NEW MOVEMENT TRY
+
+    private int desiredLane = 1;
+    public float laneDistance = 2;
+    private Vector3 direction;
+
+    //END OF TRY
 
     private float boostTimer;
     private bool boosting;
@@ -25,18 +34,51 @@ public class PlayerMovement : MonoBehaviour
     float normalHeight;
     public float reducedHeight;
 
-    //TODO:
-    //More rules for random obstacle spawn
-    //Moving obstacles decide what way they go
-    
-   private void FixedUpdate ()
+    private void Update()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (transform.position.y < -8)
+        {
+            Die();
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+            Crouch();
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+            StopCrouch();
+
+        //NEW TRY
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            desiredLane++;
+            if (desiredLane == 3)
+                desiredLane = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            desiredLane--;
+            if (desiredLane == -1)
+                desiredLane = 0;
+        }
+        //NEW TRY END
+    }
+    private void FixedUpdate ()
     {
         if (!alive) return;
 
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;   //kliknięcie klawisza d powoduje przesuwanie gracza w prawo, a klawisza a - w lewo
-        
-        rb.MovePosition(rb.position + forwardMove + horizontalMove);
+        if(speed < maxSpeed)
+            speed += 0.1f * Time.deltaTime;
+
+        //Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+        //Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;   //kliknięcie klawisza d powoduje przesuwanie gracza w prawo, a klawisza a - w lewo
+
+        //rb.MovePosition(rb.position + forwardMove + horizontalMove);
+
+        //START TRY
+
+        rb.MovePosition(rb.position + direction * Time.deltaTime);
+
+        //END NEW TRY
 
         if (boosting == true)
         {
@@ -44,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             if (boostTimer >= 5)
             {
                 //speed = 10;
-                speed -= 5;
+                speed += 5;
                 boostTimer = 0;
                 boosting = false;
             }
@@ -62,6 +104,24 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //START NEW TRY
+        direction.z = speed;
+     
+        //Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
+        Vector3 newPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+
+        if (desiredLane == 0)
+        {
+            newPosition += Vector3.left * laneDistance;
+        }
+        else if (desiredLane == 2)
+        {
+            newPosition += Vector3.right * laneDistance;
+        }
+
+        transform.position = Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime);
+        //END TRY
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "SpeedBoost")
         {
             boosting = true;
-            speed += 5;
+            speed -= 5;
             Destroy(other.gameObject);
         }
         if (other.tag == "Invincibility")
@@ -88,20 +148,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        if (transform.position.y < -8)
-        {
-            Die();
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-            Crouch();
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-            StopCrouch();
-
-    }
     void Crouch()
     {
         playerCollidor.height = reducedHeight;

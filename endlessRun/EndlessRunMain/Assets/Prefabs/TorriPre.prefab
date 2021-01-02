@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2094812725451096608
+--- !u!1 &5117933904203997212
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 146026509431110860}
-  m_Layer: 8
-  m_Name: TorriPre
-  m_TagString: temp
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &146026509431110860
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094812725451096608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 9095799762030911142}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2439718236294144726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9095799762030911142}
-  - component: {fileID: 6827336031963874465}
-  - component: {fileID: 7769208742500024194}
-  - component: {fileID: 1153071189182930190}
+  - component: {fileID: 1517868225034940027}
+  - component: {fileID: 2455791358619855972}
+  - component: {fileID: 2624357827082013130}
+  - component: {fileID: 677787683726430346}
+  - component: {fileID: 5875251325349852433}
+  - component: {fileID: 229096854549600463}
+  - component: {fileID: 263795805798628346}
   m_Layer: 8
   m_Name: Torii (Double Color) 1
   m_TagString: temp
@@ -50,35 +22,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9095799762030911142
+--- !u!4 &1517868225034940027
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2439718236294144726}
+  m_GameObject: {fileID: 5117933904203997212}
   m_LocalRotation: {x: 0.6956021, y: 0.0049201404, z: 0.023703756, w: -0.71801925}
   m_LocalPosition: {x: -0, y: 1.38, z: -0}
   m_LocalScale: {x: 206, y: 8.786152, z: 14.36354}
   m_Children: []
-  m_Father: {fileID: 146026509431110860}
+  m_Father: {fileID: 6290221312917432936}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -812.37, y: 218.8, z: 138.88}
---- !u!33 &6827336031963874465
+--- !u!33 &2455791358619855972
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2439718236294144726}
+  m_GameObject: {fileID: 5117933904203997212}
   m_Mesh: {fileID: 4300002, guid: fe9ba93f508bf1849bce40f4ae043ed2, type: 3}
---- !u!23 &7769208742500024194
+--- !u!23 &2624357827082013130
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2439718236294144726}
+  m_GameObject: {fileID: 5117933904203997212}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -112,16 +84,85 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1153071189182930190
+--- !u!65 &677787683726430346
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2439718236294144726}
+  m_GameObject: {fileID: 5117933904203997212}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.022607334, y: 0.074278794, z: 0.15252408}
-  m_Center: {x: 6.7367236e-12, y: 8.112511e-11, z: 0.051157385}
+  m_Size: {x: 0.01679444, y: 0.074278794, z: 0.15252408}
+  m_Center: {x: -0.00018670603, y: 1.2714007e-11, z: 0.05115738}
+--- !u!65 &5875251325349852433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117933904203997212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0012249575, y: 0.053771622, z: 0.49794617}
+  m_Center: {x: 0.007634721, y: 0.00079122843, z: -0.12154807}
+--- !u!65 &229096854549600463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117933904203997212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0015083029, y: 0.04736694, z: 0.49794617}
+  m_Center: {x: -0.007792541, y: -0.0005129771, z: -0.12154827}
+--- !u!114 &263795805798628346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117933904203997212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fa0221313fc884e875249491fe1f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7882748374832651524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6290221312917432936}
+  m_Layer: 8
+  m_Name: TorriPre
+  m_TagString: temp
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6290221312917432936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882748374832651524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1517868225034940027}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

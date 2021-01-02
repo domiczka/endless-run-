@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int score;
+    public int coinScore;
+    public Text coinsText;
+
+    public Text distanceText;
+
+    public Transform player;
     public static GameManager inst;
-    public Text scoreText;
     public PlayerMovement playerMovement;
     public GameObject GameOverMenu;
 
@@ -18,9 +22,9 @@ public class GameManager : MonoBehaviour
     {
         if (boosting)
         {
-            score++;
-            score++;
-            scoreText.text = "Score: " + score;
+            coinScore++;
+            coinScore++;
+            coinsText.text = "Coins: " + coinScore;
 
             boostTimer += Time.deltaTime;
             if (boostTimer >= 5)
@@ -31,36 +35,30 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            score++;
-            scoreText.text = "Score: " + score;
+            coinScore++;
+            coinsText.text = "Coins: " + coinScore;
 
-            //zwiększanie prędkości gracza:
-            playerMovement.speed += playerMovement.speedIncreasePerPoint;
+            //player speed
+            //playerMovement.speed += playerMovement.speedIncreasePerPoint;
         }
+    }
+
+    private void Update()
+    {
+        distanceText.text = player.position.z.ToString("0");
 
     }
+
     public void IncrementDoubleScore()
     {
         boosting = true;
     }
-
 
     private void Awake ()
     {
         inst = this;
     }
 
-    
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
     public void GameOver()
     {
         GameOverMenu.SetActive(true);
