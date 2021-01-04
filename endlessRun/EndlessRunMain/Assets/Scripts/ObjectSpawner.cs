@@ -11,7 +11,6 @@ public class ObjectSpawner : MonoBehaviour
     public float boosterSpawnTimer = 15.0f;
     public GameObject[] booster;
 
-
     // Update is called once per frame
     void Update()
     {

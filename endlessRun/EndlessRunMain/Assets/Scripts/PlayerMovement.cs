@@ -24,16 +24,24 @@ public class PlayerMovement : MonoBehaviour
 
     //END OF TRY
 
-    private float boostTimer;
-    private bool boosting;
-    private float boostMoveTimer;
-    private bool boostingMove;
+    public float boostTimer;
+    public bool boosting;
+    public float boostMoveTimer;
+    public bool boostingMove;
     [SerializeField] private Renderer myObject;
 
     CapsuleCollider playerCollidor;
     float normalHeight;
     public float reducedHeight;
+    private bool defaultMovement;
 
+    public bool speedBooster;
+    public bool invincibleBooster;
+    public bool coinBooster;
+    public bool movementSwapBooster;
+
+
+    //END
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -48,19 +56,61 @@ public class PlayerMovement : MonoBehaviour
             StopCrouch();
 
         //NEW TRY
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (!defaultMovement)
         {
-            desiredLane++;
-            if (desiredLane == 3)
-                desiredLane = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            desiredLane--;
-            if (desiredLane == -1)
-                desiredLane = 0;
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                desiredLane++;
+                if (desiredLane == 3)
+                    desiredLane = 2;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                desiredLane--;
+                if (desiredLane == -1)
+                    desiredLane = 0;
+            }
         }
         //NEW TRY END
+
+        //NEW TRY EDITOR
+        if (speedBooster)
+        {
+            boosting = true;
+            if (speedBooster)
+            {
+                speedBooster = false;
+                speed -= 5;
+            }
+        }
+        if (invincibleBooster)
+        {
+            boostingMove = true;
+            if (invincibleBooster)
+            {
+                invincibleBooster = false;
+                anim.Play("Fox_Attack_TailUSE");
+                this.gameObject.layer = 9;
+            }
+        }
+        if (coinBooster)
+        {
+            coinBooster = false;
+            GameManager.inst.IncrementDoubleScore();
+        }
+        if (movementSwapBooster)
+        {
+            movementSwapBooster = false;
+            if (defaultMovement)
+                {
+                    defaultMovement = false;
+                }
+                else if (!defaultMovement)
+                {
+                    defaultMovement = true;
+                }
+        }
+        //END
     }
     private void FixedUpdate ()
     {
@@ -69,19 +119,17 @@ public class PlayerMovement : MonoBehaviour
         if(speed < maxSpeed)
             speed += 0.1f * Time.deltaTime;
 
-        //Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        //Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;   //kliknięcie klawisza d powoduje przesuwanie gracza w prawo, a klawisza a - w lewo
+        if (defaultMovement)
+        {
+            Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;   //kliknięcie klawisza d powoduje przesuwanie gracza w prawo, a klawisza a - w lewo
 
-        //rb.MovePosition(rb.position + forwardMove + horizontalMove);
-
-        //START TRY
-
-        rb.MovePosition(rb.position + direction * Time.deltaTime);
-
-        //END NEW TRY
+            rb.MovePosition(rb.position + forwardMove + horizontalMove);
+        }
 
         if (boosting == true)
         {
+            Debug.Log("TEST");
             boostTimer += Time.deltaTime;
             if (boostTimer >= 5)
             {
@@ -104,22 +152,25 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //START NEW TRY
-        direction.z = speed;
-     
-        //Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
-        Vector3 newPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-
-        if (desiredLane == 0)
+        //START TRY
+        if (!defaultMovement)
         {
-            newPosition += Vector3.left * laneDistance;
-        }
-        else if (desiredLane == 2)
-        {
-            newPosition += Vector3.right * laneDistance;
-        }
+            rb.MovePosition(rb.position + direction * Time.deltaTime);
+            direction.z = speed;
 
-        transform.position = Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime);
+            Vector3 newPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+
+            if (desiredLane == 0)
+            {
+                newPosition += Vector3.left * laneDistance;
+            }
+            else if (desiredLane == 2)
+            {
+                newPosition += Vector3.right * laneDistance;
+            }
+
+            transform.position = Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime);
+        }
         //END TRY
 
     }
@@ -146,6 +197,17 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.inst.IncrementDoubleScore();
         }
+        if (other.tag == "swapMovement")
+        {
+            if (defaultMovement)
+            {
+                defaultMovement = false;
+            }
+            else if (!defaultMovement)
+            {
+                defaultMovement = true;
+            }
+        }
     }
 
     void Crouch()
@@ -167,6 +229,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
+        defaultMovement = true;
+
         gameManager = GameObject.FindObjectOfType<GameManager>();
 
         boostTimer = 0;

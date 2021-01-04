@@ -9,6 +9,7 @@ TagManager:
   - SpeedBoost
   - Invincibility
   - CoinBoost
+  - swapMovement
   layers:
   - Default
   - TransparentFX
