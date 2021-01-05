@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1770451159101320028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324449128188273293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fa0221313fc884e875249491fe1f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2983015937509717974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324449128188273293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2104459, y: 4.12627, z: 1.4095497}
+  m_Center: {x: -0.026760817, y: 2.0300853, z: -0.12697363}
 --- !u!1001 &5323579974083294603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +34,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1435423013525254, guid: 03c040d60cf35694a95e7ea6af60135f, type: 3}
       propertyPath: m_Name
-      value: cTreeTypeD_4
+      value: poprawione drzewko
       objectReference: {fileID: 0}
     - target: {fileID: 4813386726380038, guid: 03c040d60cf35694a95e7ea6af60135f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,3 +162,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a9de77d28dbc2c04ebc6fd4da5192f8f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03c040d60cf35694a95e7ea6af60135f, type: 3}
+--- !u!1 &5324449128188273293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1435423013525254, guid: 03c040d60cf35694a95e7ea6af60135f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5323579974083294603}
+  m_PrefabAsset: {fileID: 0}

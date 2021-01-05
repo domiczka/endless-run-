@@ -1,12 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8653519063175019844
+--- !u!114 &6232991477552702301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331062370787097470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fa0221313fc884e875249491fe1f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8443883939536734199
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4676284554273979394, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676284554273979394, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.321463e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676284554273979394, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.21278712
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676284554273979394, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.021027034
+      objectReference: {fileID: 0}
     - target: {fileID: 5275322597746360527, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -15,37 +47,37 @@ PrefabInstance:
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.323928
+      value: 3.4854422
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6895545
+      value: 3.693417
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.3246312
+      value: -12.192642
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.67459065
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.011850731
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.040433247
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7369886
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
@@ -55,22 +87,28 @@ PrefabInstance:
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -816.6
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 218.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748323645, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 138.88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275322597748636809, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
         type: 3}
       propertyPath: m_Name
-      value: Torii (Double Color) 1
+      value: tori
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05b96ba5f4a375f48a1f6e806af5abc8, type: 3}
+--- !u!1 &4331062370787097470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5275322597748636809, guid: 05b96ba5f4a375f48a1f6e806af5abc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8443883939536734199}
+  m_PrefabAsset: {fileID: 0}

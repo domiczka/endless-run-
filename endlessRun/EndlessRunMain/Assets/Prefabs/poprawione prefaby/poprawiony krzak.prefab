@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &3540830652116841386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155366087017671507}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.90163684, y: 0.52356833, z: 0.9885481}
+  m_Center: {x: -0.0043633054, y: 0.26178417, z: -0.001378445}
+--- !u!114 &9092396773036403930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155366087017671507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3fa0221313fc884e875249491fe1f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &153851813640365805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +34,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1530291592220094, guid: 7f96b079e1c47a44e8580736dc32c8ab, type: 3}
       propertyPath: m_Name
-      value: cBushTypeG_4
+      value: poprawiony krzak
       objectReference: {fileID: 0}
     - target: {fileID: 4406619558018012, guid: 7f96b079e1c47a44e8580736dc32c8ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,15 +82,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4406619558018012, guid: 7f96b079e1c47a44e8580736dc32c8ab, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.6904
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4406619558018012, guid: 7f96b079e1c47a44e8580736dc32c8ab, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.6904
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4406619558018012, guid: 7f96b079e1c47a44e8580736dc32c8ab, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.6904
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 23042410688438150, guid: 7f96b079e1c47a44e8580736dc32c8ab,
         type: 3}
@@ -124,3 +149,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a9de77d28dbc2c04ebc6fd4da5192f8f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f96b079e1c47a44e8580736dc32c8ab, type: 3}
+--- !u!1 &155366087017671507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1530291592220094, guid: 7f96b079e1c47a44e8580736dc32c8ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 153851813640365805}
+  m_PrefabAsset: {fileID: 0}

@@ -373,15 +373,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
-  ObstaclePrefab: {fileID: 4193714742245133696, guid: 3e41c021917b9a94e81bd63847d74c90,
+  ObstaclePrefab: {fileID: 155366087017671507, guid: 39c402d7fe0dde244aec967e79dec74b,
     type: 3}
   movingObstacleRight: {fileID: 1800363226416774956, guid: 256c193182663e84ab44e3bd4544727c,
     type: 3}
   movingObstacleLeft: {fileID: 3233451675436132907, guid: 71f1384004c0e6149bead17595f7b5c2,
     type: 3}
-  RollUnderObstaclePrefab: {fileID: 2094812725451096608, guid: ccc7588f834e4834eb88761f5d1c045f,
+  RollUnderObstaclePrefab: {fileID: 6045568977860104056, guid: e971d3ab2ba368c48baaff0a1c7cafeb,
     type: 3}
-  SlideObstaclePrefab: {fileID: 4428476725295512408, guid: 7d14a4dcd08d14a4d831be06021c68eb,
+  SlideObstaclePrefab: {fileID: 5324449128188273293, guid: 8740625a12984bd48bedf4d3d85f7f9e,
     type: 3}
 --- !u!1 &7756480077908637543
 GameObject:
