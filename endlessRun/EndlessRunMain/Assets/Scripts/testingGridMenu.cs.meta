@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9a737b947292bf14ea212531a5c92066
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - pfEvadeObstacle: {fileID: 4428476725295512408, guid: 7d14a4dcd08d14a4d831be06021c68eb,
+      type: 3}
+  - pfJumpObstacle: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
+      type: 3}
+  - pfSlidingObstacle: {fileID: 7882748374832651524, guid: ccc7588f834e4834eb88761f5d1c045f,
+      type: 3}
+  - pfMovingObstacleLeft: {fileID: 4078341081520178742, guid: d6060abd3937ec443977810b2cb1d3b2,
+      type: 3}
+  - pfMovingObstacleRight: {fileID: 1778887696517133985, guid: ee75beb2298eaf34d947e506f374198e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
