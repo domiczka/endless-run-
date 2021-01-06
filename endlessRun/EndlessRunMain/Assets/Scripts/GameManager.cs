@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public Text coinsText;
 
     public Text distanceText;
-
+    public int distanceScore;
+    
     public Transform player;
     public static GameManager inst;
     public PlayerMovement playerMovement;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         distanceText.text = player.position.z.ToString("0");
+        distanceScore = (int)player.position.z; 
 
     }
 
@@ -62,6 +64,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         GameOverMenu.SetActive(true);
-        //Debug.Log("Test");
+        //Hier highscore speichern
+        PlayerPrefs.SetInt("Distance" , distanceScore);
+        PlayerPrefs.SetInt("Coins", coinScore);
     }
 }

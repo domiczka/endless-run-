@@ -129,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (boosting == true)
         {
-            Debug.Log("TEST");
             boostTimer += Time.deltaTime;
             if (boostTimer >= 5)
             {

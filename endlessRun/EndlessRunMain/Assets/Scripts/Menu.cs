@@ -4,18 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public GameObject hsMenu;
+    private bool hsMenuOn = false;
     public void StartGame ()
     {
         SceneManager.LoadScene("endless run 1");
@@ -23,5 +13,18 @@ public class Menu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void HighScoreMenu()
+    {
+        if (!hsMenuOn)
+        {
+            hsMenu.SetActive(true);
+            hsMenuOn = true;
+        }
+        else if (hsMenuOn)
+        {
+            hsMenu.SetActive(false);
+            hsMenuOn = false;
+        }
     }
 }
