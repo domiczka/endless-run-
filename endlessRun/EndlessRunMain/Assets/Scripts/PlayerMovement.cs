@@ -35,9 +35,13 @@ public class PlayerMovement : MonoBehaviour
     public float reducedHeight;
     private bool defaultMovement;
 
+    [HideInInspector]
     public bool speedBooster;
+    [HideInInspector]
     public bool invincibleBooster;
+    [HideInInspector]
     public bool coinBooster;
+    [HideInInspector]
     public bool movementSwapBooster;
 
 
@@ -145,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 this.gameObject.layer = 10;
                 anim.Play("Fox_RunUSE");
+                FindObjectOfType<AudioManager>().StopPlaying("InvincibleBooster");
                 //myObject.material.color = Color.blue;
                 boostMoveTimer = 0;
                 boostingMove = false;
@@ -186,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             anim.Play("Fox_Attack_TailUSE");
-
+            FindObjectOfType<AudioManager>().Play("InvincibleBooster");
             this.gameObject.layer = 9;
             //myObject.material.color = Color.green;
             boostingMove = true;
@@ -222,6 +227,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die ()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+
         alive = false;
         Invoke("Restart", 2);
     }

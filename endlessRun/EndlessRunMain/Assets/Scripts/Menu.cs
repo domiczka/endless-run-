@@ -27,4 +27,8 @@ public class Menu : MonoBehaviour
             hsMenuOn = false;
         }
     }
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }
