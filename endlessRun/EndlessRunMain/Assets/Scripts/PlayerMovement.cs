@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         if (defaultMovement)
         {
             Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;   //kliknięcie klawisza d powoduje przesuwanie gracza w prawo, a klawisza a - w lewo
+            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier; 
 
             rb.MovePosition(rb.position + forwardMove + horizontalMove);
         }
