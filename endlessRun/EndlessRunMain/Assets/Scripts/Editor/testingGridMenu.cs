@@ -18,6 +18,11 @@ public class testingGridMenu : EditorWindow
     public GameObject pfMovingObstacleLeft;
     public GameObject pfMovingObstacleRight;
 
+    public float evadeObstacleFrequency = 5.0f;
+    public float jumpObstacleFrequency = 5.0f;
+    public float slideObstacleFrequency = 5.0f;
+    public float movingObstacleLeftFrequency = 5.0f;
+    public float movingObstacleRightFrequency = 5.0f;
 
     // Add menu named "My Window" to the Window menu
     [MenuItem("My Tools/TestingGrid")]
@@ -36,11 +41,23 @@ public class testingGridMenu : EditorWindow
         //myString = EditorGUILayout.TextField("Text Field", myString);
 
         groupEnabled = EditorGUILayout.BeginToggleGroup("Exclude ObstacleTyp Settings", groupEnabled);
+        
         evadeObstacle = EditorGUILayout.Toggle("Active EvadeObstacle", evadeObstacle);
+        evadeObstacleFrequency = EditorGUILayout.FloatField("Evade obstacle frequency", evadeObstacleFrequency);
+
+
         jumpObstacle = EditorGUILayout.Toggle("Active JumpObstacle", jumpObstacle);
+        jumpObstacleFrequency = EditorGUILayout.FloatField("Jump obstacle frequency", jumpObstacleFrequency);
+        
         slideObstacle = EditorGUILayout.Toggle("Active SlideObstacle", slideObstacle);
+        slideObstacleFrequency = EditorGUILayout.FloatField("Slide obstacle frequency", slideObstacleFrequency);
+        
         movingObstacleLeft = EditorGUILayout.Toggle("Active MovingObstacle", movingObstacleLeft);
+        movingObstacleLeftFrequency = EditorGUILayout.FloatField("Moving obstacle left frequency", movingObstacleLeftFrequency);
+
         movingObstacleRight = EditorGUILayout.Toggle("Active MovingObstacle", movingObstacleRight);
+        movingObstacleRightFrequency = EditorGUILayout.FloatField("Moving obstacle right frequency", movingObstacleRightFrequency);
+
         EditorGUILayout.EndToggleGroup();
 
         //if (GUILayout.Button("Disable Camera"))
@@ -90,4 +107,16 @@ public class testingGridMenu : EditorWindow
         }
 
     }
+
 }
+
+
+[System.Serializable]
+public class FrequencyInfo
+{
+    public float evadeObstacleFrequency = 5.0f;
+    public float jumpObstacleFrequency = 5.0f;
+    public float slideObstacleFrequency = 5.0f;
+    public float movingObstacleLeftFrequency = 5.0f;
+    public float movingObstacleRightFrequency = 5.0f;
+} 
