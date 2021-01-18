@@ -224,7 +224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 254.7}
+  m_AnchoredPosition: {x: 0.000061035156, y: -34.899994}
   m_SizeDelta: {x: -0.000091552734, y: -1054.149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175882386
@@ -424,10 +424,10 @@ RectTransform:
   m_Father: {fileID: 458953803}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 417.5, y: 0.5}
-  m_SizeDelta: {x: 480.03735, y: 1169.1733}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 420, y: 15.5}
+  m_SizeDelta: {x: 200.03735, y: 1109.1733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266558703
 MonoBehaviour:
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 458953805}
   - component: {fileID: 458953804}
   m_Layer: 5
-  m_Name: SettingsMenu
+  m_Name: ScoreMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,10 +1034,10 @@ RectTransform:
   m_Father: {fileID: 266558702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: 388.1}
-  m_SizeDelta: {x: 276.57092, y: 91.34834}
+  m_AnchorMin: {x: 0, y: 0.3327363}
+  m_AnchorMax: {x: 0.9395009, y: 1}
+  m_AnchoredPosition: {x: 14.5, y: -96}
+  m_SizeDelta: {x: -174.42908, y: -689.6516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627006208
 MonoBehaviour:
@@ -1764,7 +1764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 139.68}
+  m_AnchoredPosition: {x: -0.000030517578, y: -149.92001}
   m_SizeDelta: {x: -0.000091552734, y: -1054.149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018204243
