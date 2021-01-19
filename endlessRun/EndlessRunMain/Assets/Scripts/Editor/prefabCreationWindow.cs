@@ -16,7 +16,7 @@ public class prefabCreationWindow : EditorWindow
     void OnInspectorUpdate()
     {
         Repaint();
-    }
+    } 
 
     void OnGUI()
     {
@@ -29,6 +29,8 @@ public class prefabCreationWindow : EditorWindow
             obj.tag = "temp";
             obj.AddComponent<Obstacle>();
             obj.AddComponent<BoxCollider>();
+
+            //PrefabUtility.InstantiatePrefab(obj);
         }
     }
 }

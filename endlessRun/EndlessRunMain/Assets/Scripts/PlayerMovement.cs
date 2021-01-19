@@ -28,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
     public bool boosting;
     public float boostMoveTimer;
     public bool boostingMove;
+
+    [HideInInspector]
+    public bool swapLane;
+    private bool swapLaneMove;
+    private float swapLaneTimer;
+
     [SerializeField] private Renderer myObject;
 
     CapsuleCollider playerCollidor;
@@ -97,6 +103,15 @@ public class PlayerMovement : MonoBehaviour
                 this.gameObject.layer = 9;
             }
         }
+        if (swapLane)
+        {
+            swapLaneMove = true;
+            if (swapLane)
+            {
+                swapLane = false;
+                this.gameObject.layer = 9;
+            }
+        }
         if (coinBooster)
         {
             coinBooster = false;
@@ -155,6 +170,16 @@ public class PlayerMovement : MonoBehaviour
                 boostingMove = false;
             }
         }
+        if (swapLaneMove == true)
+        {
+            swapLaneTimer += Time.deltaTime;
+            if (swapLaneTimer >= 1.5f)
+            {
+                this.gameObject.layer = 10;
+                swapLaneTimer = 0;
+                swapLaneMove = false;
+            }
+        }
 
         //START TRY
         if (!defaultMovement)
@@ -167,10 +192,12 @@ public class PlayerMovement : MonoBehaviour
             if (desiredLane == 0)
             {
                 newPosition += Vector3.left * laneDistance;
+                swapLane = true;
             }
             else if (desiredLane == 2)
             {
                 newPosition += Vector3.right * laneDistance;
+                swapLane = true;
             }
 
             transform.position = Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime);

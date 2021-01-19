@@ -7,7 +7,7 @@ MonoImporter:
   - m_ViewDataDictionary: {instanceID: 0}
   - pfEvadeObstacle: {fileID: 4428476725295512408, guid: 7d14a4dcd08d14a4d831be06021c68eb,
       type: 3}
-  - pfJumpObstacle: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
+  - pfJumpObstacle: {fileID: 155610310898129451, guid: 3e41c021917b9a94e81bd63847d74c90,
       type: 3}
   - pfSlidingObstacle: {fileID: 7882748374832651524, guid: ccc7588f834e4834eb88761f5d1c045f,
       type: 3}

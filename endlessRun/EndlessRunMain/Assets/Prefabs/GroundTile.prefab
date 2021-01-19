@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
-  ObstaclePrefab: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
+  ObstaclePrefab: {fileID: 155610310898129451, guid: 3e41c021917b9a94e81bd63847d74c90,
     type: 3}
   movingObstacleRight: {fileID: 1778887696517133985, guid: ee75beb2298eaf34d947e506f374198e,
     type: 3}
@@ -532,7 +532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c262c90b10ca8734f9c612ad941e1220, type: 2}
+  - {fileID: 2100000, guid: e4546c30519f1fc41b92ca3f855331ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
