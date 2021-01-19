@@ -18,7 +18,6 @@ public class testingGridMenu : EditorWindow
     public GameObject pfMovingObstacleLeft;
     public GameObject pfMovingObstacleRight;
 
-
     // Add menu named "My Window" to the Window menu
     [MenuItem("My Tools/TestingGrid")]
     static void Init()
