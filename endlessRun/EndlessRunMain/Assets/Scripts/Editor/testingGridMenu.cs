@@ -65,46 +65,18 @@ public class testingGridMenu : EditorWindow
             //var gameObj = GameObject.Find("TorriPre");
             //gameObj.SetActive(false);
         //}
-        if (evadeObstacle)
-        {
-            pfEvadeObstacle.SetActive(true);
-        }
-        if (!evadeObstacle)
-        {
-            pfEvadeObstacle.SetActive(false);
-        }
-        if (jumpObstacle)
-        {
-            pfJumpObstacle.SetActive(true);
-        }
-        if (!jumpObstacle)
-        {
-            pfJumpObstacle.SetActive(false);
-        }
-        if (slideObstacle)
-        {
-            pfSlidingObstacle.SetActive(true);
-        }
-        if (!slideObstacle)
-        {
-            pfSlidingObstacle.SetActive(false);
-        }
-        if (movingObstacleLeft)
-        {
-            pfMovingObstacleLeft.SetActive(true);
-        }
-        if (!movingObstacleLeft)
-        {
-            pfMovingObstacleLeft.SetActive(false);
-        }
-        if (movingObstacleRight)
-        {
-            pfMovingObstacleRight.SetActive(true);
-        }
-        if (!movingObstacleRight)
-        {
-            pfMovingObstacleRight.SetActive(false);
-        }
+        
+       
+         pfEvadeObstacle.SetActive(evadeObstacle);
+        
+         pfJumpObstacle.SetActive(jumpObstacle);
+        
+         pfSlidingObstacle.SetActive(slideObstacle);
+        
+         pfMovingObstacleLeft.SetActive(movingObstacleLeft);
+        
+         pfMovingObstacleRight.SetActive(movingObstacleRight);
+        
 
     }
 
