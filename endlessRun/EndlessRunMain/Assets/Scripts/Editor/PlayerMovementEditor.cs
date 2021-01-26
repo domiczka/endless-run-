@@ -26,7 +26,7 @@ public class PlayerMovementEditor : Editor
         if (GUILayout.Button("MovementSwapBoost Player"))
         {
             Debug.Log((PlayerMovement)target);
-            ((PlayerMovement)target).movementSwapBooster = true;
+            ((PlayerMovement)target).ToggleMovement();
         }
 
     }

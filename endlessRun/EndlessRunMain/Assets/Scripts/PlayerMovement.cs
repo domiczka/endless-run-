@@ -28,12 +28,6 @@ public class PlayerMovement : MonoBehaviour
     public bool boosting;
     public float boostMoveTimer;
     public bool boostingMove;
-
-    [HideInInspector]
-    public bool swapLane;
-    private bool swapLaneMove;
-    private float swapLaneTimer;
-
     [SerializeField] private Renderer myObject;
 
     CapsuleCollider playerCollidor;
@@ -47,8 +41,7 @@ public class PlayerMovement : MonoBehaviour
     public bool invincibleBooster;
     [HideInInspector]
     public bool coinBooster;
-    [HideInInspector]
-    public bool movementSwapBooster;
+
 
 
     //END
@@ -69,17 +62,11 @@ public class PlayerMovement : MonoBehaviour
         if (!defaultMovement)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
                 desiredLane++;
-                if (desiredLane == 3)
-                    desiredLane = 2;
-            }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
                 desiredLane--;
-                if (desiredLane == -1)
-                    desiredLane = 0;
-            }
+
+            desiredLane = Mathf.Clamp(desiredLane, 0, 3);
         }
         //NEW TRY END
 
@@ -103,45 +90,31 @@ public class PlayerMovement : MonoBehaviour
                 this.gameObject.layer = 9;
             }
         }
-        if (swapLane)
-        {
-            swapLaneMove = true;
-            if (swapLane)
-            {
-                swapLane = false;
-                this.gameObject.layer = 9;
-            }
-        }
         if (coinBooster)
         {
             coinBooster = false;
             GameManager.inst.IncrementDoubleScore();
         }
-        if (movementSwapBooster)
-        {
-            movementSwapBooster = false;
-            if (defaultMovement)
-                {
-                    defaultMovement = false;
-                }
-                else if (!defaultMovement)
-                {
-                    defaultMovement = true;
-                }
-        }
+
         //END
     }
-    private void FixedUpdate ()
+
+    public void ToggleMovement()
+    {
+        defaultMovement = !defaultMovement;
+    }
+
+    private void FixedUpdate()
     {
         if (!alive) return;
 
-        if(speed < maxSpeed)
+        if (speed < maxSpeed)
             speed += 0.1f * Time.deltaTime;
 
         if (defaultMovement)
         {
             Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier; 
+            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
 
             rb.MovePosition(rb.position + forwardMove + horizontalMove);
         }
@@ -170,37 +143,23 @@ public class PlayerMovement : MonoBehaviour
                 boostingMove = false;
             }
         }
-        if (swapLaneMove == true)
-        {
-            swapLaneTimer += Time.deltaTime;
-            if (swapLaneTimer >= 1.5f)
-            {
-                this.gameObject.layer = 10;
-                swapLaneTimer = 0;
-                swapLaneMove = false;
-            }
-        }
 
         //START TRY
         if (!defaultMovement)
         {
-            rb.MovePosition(rb.position + direction * Time.deltaTime);
             direction.z = speed;
-
-            Vector3 newPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+            Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+            Vector3 newPosition = new Vector3(0, transform.position.y, transform.position.z) + forwardMove;
 
             if (desiredLane == 0)
             {
-                newPosition += Vector3.left * laneDistance;
-                swapLane = true;
+                newPosition.x = -laneDistance;
             }
             else if (desiredLane == 2)
             {
-                newPosition += Vector3.right * laneDistance;
-                swapLane = true;
+                newPosition.x = laneDistance;
             }
-
-            transform.position = Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime);
+            rb.MovePosition(Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime));
         }
         //END TRY
 
@@ -218,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             anim.Play("Fox_Attack_TailUSE");
-            FindObjectOfType<AudioManager>().Play("InvincibleBooster");
+            AudioManager.instance.Play("InvincibleBooster");
             this.gameObject.layer = 9;
             //myObject.material.color = Color.green;
             boostingMove = true;
@@ -230,14 +189,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.tag == "swapMovement")
         {
-            if (defaultMovement)
-            {
-                defaultMovement = false;
-            }
-            else if (!defaultMovement)
-            {
-                defaultMovement = true;
-            }
+            ToggleMovement();
         }
     }
 
@@ -252,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
         anim.Play("Fox_RunUSE");
     }
 
-    public void Die ()
+    public void Die()
     {
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
