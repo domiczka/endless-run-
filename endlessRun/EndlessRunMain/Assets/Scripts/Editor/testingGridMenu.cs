@@ -83,12 +83,3 @@ public class testingGridMenu : EditorWindow
 }
 
 
-[System.Serializable]
-public class FrequencyInfo
-{
-    public float evadeObstacleFrequency = 5.0f;
-    public float jumpObstacleFrequency = 5.0f;
-    public float slideObstacleFrequency = 5.0f;
-    public float movingObstacleLeftFrequency = 5.0f;
-    public float movingObstacleRightFrequency = 5.0f;
-} 

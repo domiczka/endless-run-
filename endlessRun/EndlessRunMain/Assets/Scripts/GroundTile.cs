@@ -2,7 +2,8 @@
 
 public class GroundTile : MonoBehaviour
 {
-    
+    public FrequencyInfo info;
+
     GroundSpawner groundSpawner;
     public GameObject coinPrefab;
     public GameObject ObstaclePrefab;
@@ -154,3 +155,13 @@ public class GroundTile : MonoBehaviour
     }
 }
 
+
+[System.Serializable]
+public class FrequencyInfo
+{
+    public float evadeObstacleFrequency = 5.0f;
+    public float jumpObstacleFrequency = 5.0f;
+    public float slideObstacleFrequency = 5.0f;
+    public float movingObstacleLeftFrequency = 5.0f;
+    public float movingObstacleRightFrequency = 5.0f;
+}
