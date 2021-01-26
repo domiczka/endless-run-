@@ -687,16 +687,13 @@ MonoBehaviour:
   obstacles:
   - spawnObject: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
       type: 3}
-    minProbabilityRange: 0
-    maxProbabilityRange: 1
+    probability: 0.2
   - spawnObject: {fileID: 7882748374832651524, guid: ccc7588f834e4834eb88761f5d1c045f,
       type: 3}
-    minProbabilityRange: 2
-    maxProbabilityRange: 5
+    probability: 0.8
   - spawnObject: {fileID: 4428476725295512408, guid: 7d14a4dcd08d14a4d831be06021c68eb,
       type: 3}
-    minProbabilityRange: 6
-    maxProbabilityRange: 9
+    probability: 0.4
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
   ObstaclePrefab: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
