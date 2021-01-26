@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3533225049380629604}
   - component: {fileID: 8100596668621059199}
-  - component: {fileID: 2428905466563993855}
+  - component: {fileID: 2556314529828700607}
   m_Layer: 0
   m_Name: GroundTile
   m_TagString: Untagged
@@ -672,7 +672,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 5}
---- !u!114 &2428905466563993855
+--- !u!114 &2556314529828700607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,9 +681,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3815928617010419776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc193cda8741d2841942bf954b6c73a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 827dbe12bdc7adc4e9e33f96b1c0fa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacles:
+  - spawnObject: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
+      type: 3}
+    minProbabilityRange: 0
+    maxProbabilityRange: 1
+  - spawnObject: {fileID: 7882748374832651524, guid: ccc7588f834e4834eb88761f5d1c045f,
+      type: 3}
+    minProbabilityRange: 2
+    maxProbabilityRange: 5
+  - spawnObject: {fileID: 4428476725295512408, guid: 7d14a4dcd08d14a4d831be06021c68eb,
+      type: 3}
+    minProbabilityRange: 6
+    maxProbabilityRange: 9
   coinPrefab: {fileID: 2887907070373764238, guid: 9bb4b15c96593d94db7d18c454faa725,
     type: 3}
   ObstaclePrefab: {fileID: 4325927730797462463, guid: 3e41c021917b9a94e81bd63847d74c90,
