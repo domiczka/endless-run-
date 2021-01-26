@@ -426,8 +426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 420, y: 15.5}
-  m_SizeDelta: {x: 200.03735, y: 1109.1733}
+  m_AnchoredPosition: {x: 418.1, y: -16.900024}
+  m_SizeDelta: {x: 196.22998, y: 1173.897}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266558703
 MonoBehaviour:
@@ -2384,6 +2384,7 @@ MonoBehaviour:
   boosting: 0
   boostMoveTimer: 0
   boostingMove: 0
+  swapLane: 0
   myObject: {fileID: 0}
   reducedHeight: 0
   speedBooster: 0
