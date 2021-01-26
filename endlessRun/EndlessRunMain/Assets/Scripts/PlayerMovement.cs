@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Animations;
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     public GameManager gameManager;
     bool alive = true;
     public Animator anim;
@@ -41,112 +40,85 @@ public class PlayerMovement : MonoBehaviour
     public bool invincibleBooster;
     [HideInInspector]
     public bool coinBooster;
-    [HideInInspector]
-    public bool movementSwapBooster;
+
 
 
     //END
-    private void Update()
-    {
+    private void Update() {
         horizontalInput = Input.GetAxis("Horizontal");
-        if (transform.position.y < -8)
-        {
+        if(transform.position.y < -8) {
             Die();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.DownArrow))
             Crouch();
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        if(Input.GetKeyUp(KeyCode.DownArrow))
             StopCrouch();
 
         //NEW TRY
-        if (!defaultMovement)
-        {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
+        if(!defaultMovement) {
+            if(Input.GetKeyDown(KeyCode.RightArrow))
                 desiredLane++;
-                if (desiredLane == 3)
-                    desiredLane = 2;
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
+            if(Input.GetKeyDown(KeyCode.LeftArrow)) 
                 desiredLane--;
-                if (desiredLane == -1)
-                    desiredLane = 0;
-            }
+
+            desiredLane = Mathf.Clamp(desiredLane, 0, 3);
         }
         //NEW TRY END
 
         //NEW TRY EDITOR
-        if (speedBooster)
-        {
+        if(speedBooster) {
             boosting = true;
-            if (speedBooster)
-            {
+            if(speedBooster) {
                 speedBooster = false;
                 speed -= 5;
             }
         }
-        if (invincibleBooster)
-        {
+        if(invincibleBooster) {
             boostingMove = true;
-            if (invincibleBooster)
-            {
+            if(invincibleBooster) {
                 invincibleBooster = false;
                 anim.Play("Fox_Attack_TailUSE");
                 this.gameObject.layer = 9;
             }
         }
-        if (coinBooster)
-        {
+        if(coinBooster) {
             coinBooster = false;
             GameManager.inst.IncrementDoubleScore();
         }
-        if (movementSwapBooster)
-        {
-            movementSwapBooster = false;
-            if (defaultMovement)
-                {
-                    defaultMovement = false;
-                }
-                else if (!defaultMovement)
-                {
-                    defaultMovement = true;
-                }
-        }
+
         //END
     }
-    private void FixedUpdate ()
-    {
-        if (!alive) return;
+
+    public void ToggleMovement() {
+        defaultMovement = !defaultMovement;
+    }
+
+    private void FixedUpdate() {
+        if(!alive) return;
 
         if(speed < maxSpeed)
             speed += 0.1f * Time.deltaTime;
 
-        if (defaultMovement)
-        {
+        if(defaultMovement) {
             Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier; 
+            Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMultiplier;
 
             rb.MovePosition(rb.position + forwardMove + horizontalMove);
         }
 
-        if (boosting == true)
-        {
+        if(boosting == true) {
             boostTimer += Time.deltaTime;
-            if (boostTimer >= 5)
-            {
+            if(boostTimer >= 5) {
                 //speed = 10;
                 speed += 5;
                 boostTimer = 0;
                 boosting = false;
             }
         }
-        if (boostingMove == true)
-        {
+        if(boostingMove == true) {
             boostMoveTimer += Time.deltaTime;
-            if (boostMoveTimer >= 5)
-            {
+            if(boostMoveTimer >= 5) {
                 this.gameObject.layer = 10;
                 anim.Play("Fox_RunUSE");
                 FindObjectOfType<AudioManager>().StopPlaying("InvincibleBooster");
@@ -157,84 +129,62 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //START TRY
-        if (!defaultMovement)
-        {
-            rb.MovePosition(rb.position + direction * Time.deltaTime);
+        if(!defaultMovement) {
             direction.z = speed;
+            Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+            Vector3 newPosition = new Vector3(0, transform.position.y, transform.position.z) + forwardMove;
 
-            Vector3 newPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-
-            if (desiredLane == 0)
-            {
-                newPosition += Vector3.left * laneDistance;
+            if(desiredLane == 0) {
+                newPosition.x = -laneDistance;
+            } else if(desiredLane == 2) {
+                newPosition.x = laneDistance;
             }
-            else if (desiredLane == 2)
-            {
-                newPosition += Vector3.right * laneDistance;
-            }
-
-            transform.position = Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime);
+            rb.MovePosition(Vector3.Lerp(transform.position, newPosition, 80 * Time.deltaTime));
         }
         //END TRY
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "SpeedBoost")
-        {
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "SpeedBoost") {
             boosting = true;
             speed -= 5;
             Destroy(other.gameObject);
         }
-        if (other.tag == "Invincibility")
-        {
+        if(other.tag == "Invincibility") {
 
             anim.Play("Fox_Attack_TailUSE");
-            FindObjectOfType<AudioManager>().Play("InvincibleBooster");
+            AudioManager.instance.Play("InvincibleBooster");
             this.gameObject.layer = 9;
             //myObject.material.color = Color.green;
             boostingMove = true;
             Destroy(other.gameObject);
         }
-        if (other.tag == "CoinBoost")
-        {
+        if(other.tag == "CoinBoost") {
             GameManager.inst.IncrementDoubleScore();
         }
-        if (other.tag == "swapMovement")
-        {
-            if (defaultMovement)
-            {
-                defaultMovement = false;
-            }
-            else if (!defaultMovement)
-            {
-                defaultMovement = true;
-            }
+        if(other.tag == "swapMovement") {
+            ToggleMovement();
         }
     }
 
-    void Crouch()
-    {
+    void Crouch() {
         playerCollidor.height = reducedHeight;
         anim.Play("Fox_SomersaultUSE");
     }
-    void StopCrouch()
-    {
+    void StopCrouch() {
         playerCollidor.height = normalHeight;
         anim.Play("Fox_RunUSE");
     }
 
-    public void Die ()
-    {
+    public void Die() {
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
         alive = false;
         Invoke("Restart", 2);
     }
 
-    public void Start()
-    {
+    public void Start() {
         defaultMovement = true;
 
         gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -247,8 +197,7 @@ public class PlayerMovement : MonoBehaviour
 
         anim = GetComponent<Animator>();
     }
-    void Restart()
-    {
+    void Restart() {
         //Debug.Log("Test1");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.GameOver();
